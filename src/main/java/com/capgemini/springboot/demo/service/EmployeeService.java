@@ -58,11 +58,9 @@ public class EmployeeService {
 
 	public Employee deleteEmp(int employeeId) {
 		Employee emp = this.getEmpById(employeeId);
-		empList.forEach(e -> {
-			if (e.getEmployeeId() == employeeId) {
-				empList.remove(e);
-			}
-		});
+		
+		empList.remove(this.getEmpById(employeeId));
+			
 		return emp;
 	}
 }
