@@ -19,3 +19,31 @@
 2022-03-25 12:44:29.448  INFO 9236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
 2022-03-25 12:44:29.464  INFO 9236 --- [main] c.c.s.demo.SpringbootDemoApplication     : Started SpringbootDemoApplication in 1.787 seconds (JVM running for 2.491)
 2022-03-25 12:44:29.468  INFO 9236 --- [main] c.c.s.demo.SpringbootDemoApplication     : End
+2022-03-25 15:58:53.068  INFO 9236 --- [RMI TCP Connection(235)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-03-25 16:02:59.566  INFO 15480 --- [main] c.c.s.demo.SpringbootDemoApplication     : Starting SpringbootDemoApplication using Java 17.0.2 on LAPTOP-NSSHDHB4 with PID 15480 (C:\Users\Avinash\SPRING_WS\springboot-demo\target\classes started by Avinash in C:\Users\Avinash\SPRING_WS\springboot-demo)
+2022-03-25 16:02:59.568  INFO 15480 --- [main] c.c.s.demo.SpringbootDemoApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-03-25 16:03:00.345  INFO 15480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-25 16:03:00.399  INFO 15480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 1 JPA repository interfaces.
+2022-03-25 16:03:01.117  INFO 15480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2022-03-25 16:03:01.129  INFO 15480 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-25 16:03:01.129  INFO 15480 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-25 16:03:01.219  INFO 15480 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-25 16:03:01.220  INFO 15480 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1598 ms
+2022-03-25 16:03:01.452  INFO 15480 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-25 16:03:01.550  INFO 15480 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-03-25 16:03:01.829  INFO 15480 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-25 16:03:01.958  INFO 15480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-25 16:03:02.536  INFO 15480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-25 16:03:02.562  INFO 15480 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-03-25 16:03:04.560  INFO 15480 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-25 16:03:04.575  INFO 15480 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-25 16:03:04.908  WARN 15480 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-25 16:03:05.417  INFO 15480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2022-03-25 16:03:05.428  INFO 15480 --- [main] c.c.s.demo.SpringbootDemoApplication     : Started SpringbootDemoApplication in 6.421 seconds (JVM running for 7.323)
+2022-03-25 16:03:05.431  INFO 15480 --- [main] c.c.s.demo.SpringbootDemoApplication     : End
+2022-03-25 16:04:00.704  INFO 15480 --- [http-nio-8088-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-25 16:04:00.704  INFO 15480 --- [http-nio-8088-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-25 16:04:00.705  INFO 15480 --- [http-nio-8088-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-25 16:04:00.817  INFO 15480 --- [http-nio-8088-exec-2] c.c.s.d.controller.EmployeeController    : Employee [employeeId=110, firstName=Ronu, salary=75000.0]
+2022-03-25 16:04:29.322  INFO 15480 --- [http-nio-8088-exec-3] c.c.s.d.controller.EmployeeController    : Employee [employeeId=0, firstName=Tonu, salary=65000.0]
+2022-03-25 16:05:03.809  INFO 15480 --- [http-nio-8088-exec-5] c.c.s.d.controller.EmployeeController    : get-all-employees
