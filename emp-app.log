@@ -47,3 +47,4 @@
 2022-03-25 16:04:00.817  INFO 15480 --- [http-nio-8088-exec-2] c.c.s.d.controller.EmployeeController    : Employee [employeeId=110, firstName=Ronu, salary=75000.0]
 2022-03-25 16:04:29.322  INFO 15480 --- [http-nio-8088-exec-3] c.c.s.d.controller.EmployeeController    : Employee [employeeId=0, firstName=Tonu, salary=65000.0]
 2022-03-25 16:05:03.809  INFO 15480 --- [http-nio-8088-exec-5] c.c.s.d.controller.EmployeeController    : get-all-employees
+2022-03-25 16:05:03.810  INFO 15480 --- [http-nio-8088-exec-5] c.c.s.demo.service.EmployeeService       : EmployeeService getAllEmps
