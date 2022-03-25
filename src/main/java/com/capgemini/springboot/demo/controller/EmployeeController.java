@@ -6,8 +6,12 @@ import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capgemini.springboot.demo.model.Employee;
@@ -21,10 +25,10 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService service;
 
-//	http://localhost:8088/get-employee-by-id
-	@GetMapping("/get-employee-by-id")
-	public Employee getEmployeeById() {
-		int employeeId = new Random().nextInt(6) + 100;
+//	http://localhost:8088/get-employee-by-id/102
+	@GetMapping("/get-employee-by-id/{eid}")
+	public Employee getEmployeeById(@PathVariable(name = "eid") int employeeId) {
+//		int employeeId = new Random().nextInt(6) + 100;
 		LOG.info("EmployeeController getEmployeeById " + employeeId);
 		return service.getEmpById(employeeId);
 	}
@@ -36,20 +40,22 @@ public class EmployeeController {
 		return service.getAllEmps();
 	}
 
+//	http://localhost:8088/add-employee 
 	@PostMapping("/add-employee")
-	public Employee addEmployee() {
-		Employee employee = new Employee();
-		LOG.info("Employee added successfully.");
+	public Employee addEmployee(@RequestBody Employee employee) {
+		LOG.info(employee.toString());
 		return service.addEmp(employee);
 	}
 
-//	public Employee updateEmployee() {
-//	return null;
-//}
+	@PutMapping("/update-employee")
+	public Employee updateEmployee() {
+		return null;
+	}
 
-//	public Employee deleteEmployee() {
-//	return null;
-//}
+	@DeleteMapping("/delete-employee")
+	public Employee deleteEmployee() {
+		return null;
+	}
 
 }
 
