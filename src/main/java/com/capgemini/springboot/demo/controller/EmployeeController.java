@@ -29,19 +29,11 @@ public class EmployeeController implements IEmployeeController {
 	@Autowired
 	private EmployeeService service;
 
-////	http://localhost:8088/emp/get-employee-by-id/{eid}
-//	@GetMapping("/get-employee-by-id/{eid}")
-//	public ResponseEntity<Employee> getEmployeeById(@PathVariable(name = "eid") int employeeId) {
-//		LOG.info("EmployeeController getEmployeeById " + employeeId);
-//		Employee emp = service.getEmpById(employeeId);
-//		ResponseEntity<Employee> response = new ResponseEntity<>(emp, HttpStatus.OK);
-//		return response;
-//	}
-
 //	http://localhost:8088/emp/get-employee-by-id/{eid}
-	@GetMapping("/get-employee-by-id/{eid}")
+	@Override
+	@GetMapping("/get-employee-by-id/{eid}") // 101
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable(name = "eid") int employeeId) {
-		LOG.info("EmployeeController getEmployeeById " + employeeId);
+		LOG.info(Integer.toString(employeeId));
 		Employee emp = service.getEmpById(employeeId);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("message", "Employee " + employeeId + " was found successfully.");
@@ -49,7 +41,20 @@ public class EmployeeController implements IEmployeeController {
 		return response;
 	}
 
+//	http://localhost:8088/emp/get-employee-by-id/{eid}
+	@Override
+	@GetMapping("/get-employees-by-firstname/{firstName}")
+	public ResponseEntity<List<Employee>> getEmployeeByFirstName(@PathVariable(name = "firstName") String firstName) {
+		LOG.info(firstName);
+		List<Employee> empList = service.getEmpsByFirstName(firstName);
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("message", "Employees found successfully.");
+		ResponseEntity<List<Employee>> response = new ResponseEntity<>(empList, headers, HttpStatus.OK);
+		return response;
+	}
+
 	// http://localhost:8088/emp/get-all-employees
+	@Override
 	@GetMapping("/get-all-employees")
 	public ResponseEntity<List<Employee>> getAllEmployees() {
 		LOG.info("get-all-employees");
@@ -61,6 +66,7 @@ public class EmployeeController implements IEmployeeController {
 	}
 
 //	http://localhost:8088/emp/add-employee 
+	@Override
 	@PostMapping("/add-employee")
 	public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
 		LOG.info(employee.toString());
@@ -72,6 +78,7 @@ public class EmployeeController implements IEmployeeController {
 	}
 
 //	http://localhost:8088/emp/update-employee 
+	@Override
 	@PutMapping("/update-employee")
 	public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
 		LOG.info(employee.toString());
@@ -83,6 +90,7 @@ public class EmployeeController implements IEmployeeController {
 	}
 
 //	http://localhost:8088/emp/delete-employee/{eid} 
+	@Override
 	@DeleteMapping("/delete-employee/{eid}")
 	public ResponseEntity<Employee> deleteEmployee(@PathVariable(name = "eid") int employeeId) {
 		LOG.info(Integer.toString(employeeId));
@@ -92,10 +100,7 @@ public class EmployeeController implements IEmployeeController {
 		ResponseEntity<Employee> response = new ResponseEntity<>(emp, headers, HttpStatus.OK);
 		return response;
 	}
-
 }
-
-
 //package com.capgemini.springboot.demo.controller;
 //
 //import java.util.List;
