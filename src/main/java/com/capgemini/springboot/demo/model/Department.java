@@ -9,8 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 @Entity
 @Table(name = "departments")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class Department {
 
 	@Id

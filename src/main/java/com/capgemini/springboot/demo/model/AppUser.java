@@ -5,8 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 @Entity
 @Table(name = "app_user")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class AppUser {
 
 	@Id
